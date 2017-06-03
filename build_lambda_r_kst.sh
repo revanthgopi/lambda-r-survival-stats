@@ -60,16 +60,16 @@ sudo yum install -y python27-devel python27-pip gcc gcc-c++ readline-devel libgf
 # build survival R function if requested
 if [ $SURVIVAL == 1 ]; then
     cd /tmp
-    wget https://cran.r-project.org/src/contrib/Archive/proxy/proxy_0.4-15.tar.gz
-    sudo R CMD INSTALL proxy_0.4-15.tar.gz
-    wget https://cran.r-project.org/src/contrib/Archive/sets/sets_1.0-15.tar.gz
-    sudo R CMD INSTALL sets_1.0-15.tar.gz
-    wget https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz
-    sudo R CMD INSTALL slam_0.1-37.tar.gz
-    wget https://cran.r-project.org/src/contrib/Archive/relations/relations_0.6-5.tar.gz
-    sudo R CMD INSTALL relations_0.6-5.tar.gz
-    wget https://cran.r-project.org/src/contrib/Archive/kst/kst_0.2-0.tar.gz
-    sudo R CMD INSTALL kst_0.2-0.tar.gz
+    wget https://cran.r-project.org/src/contrib/Matrix_1.2-10.tar.gz
+    sudo R CMD INSTALL Matrix_1.2-10.tar.gz
+    wget https://cran.r-project.org/src/contrib/registry_0.3.tar.gz
+    sudo R CMD INSTALL registry_0.3.tar.gz
+    wget https://cran.r-project.org/src/contrib/proxy_0.4-17.tar.gz
+    sudo R CMD INSTALL proxy_0.4-17.tar.gz
+    wget https://cran.r-project.org/src/contrib/arules_1.5-2.tar.gz
+    sudo R CMD INSTALL arules_1.5-2.tar.gz
+    wget https://cran.r-project.org/src/contrib/recommenderlab_0.2-2.tar.gz
+    sudo R CMD INSTALL recommenderlab_0.2-2.tar.gz
 fi
 
 # setup virtualenv and install rpy2

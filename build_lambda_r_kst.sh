@@ -79,7 +79,9 @@ pip install rpy2
 # create a directory called lambda for our package
 mkdir $HOME/lambda && cd $HOME/lambda
 # copy R 
+rm /usr/lib64/R/lib/libRrefblas.so
 cp -r /usr/lib64/R/* $HOME/lambda/
+
 # Use ldd on R executable to find shared libraries, and copy all of the ones that were not already on the box
 cp /usr/lib64/R/lib/libR.so $HOME/lambda/lib/
 cp /usr/lib64/libgomp.so.1 $HOME/lambda/lib/  
@@ -89,6 +91,7 @@ cp /usr/lib64/libquadmath.so.0 $HOME/lambda/lib/
 
 # we also need to grab this one (as we learned from trial and error)
 cp /usr/lib64/liblapack.so.3 $HOME/lambda/lib/
+cp /usr/lib64/libtre.so.5 lambda/lib/
 
 # copy R executable to root of package
 cp $HOME/lambda/bin/exec/R $HOME/lambda/

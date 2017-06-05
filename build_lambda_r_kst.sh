@@ -80,6 +80,7 @@ pip install rpy2
 mkdir $HOME/lambda && cd $HOME/lambda
 # copy R 
 cp -r /usr/lib64/R/* $HOME/lambda/
+rm -f $HOME/lambda/lib/libRrefblas.so
 
 # Use ldd on R executable to find shared libraries, and copy all of the ones that were not already on the box
 cp /usr/lib64/R/lib/libR.so $HOME/lambda/lib/

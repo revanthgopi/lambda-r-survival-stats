@@ -90,7 +90,7 @@ cp /usr/lib64/libquadmath.so.0 $HOME/lambda/lib/
 
 # we also need to grab this one (as we learned from trial and error)
 cp /usr/lib64/liblapack.so.3 $HOME/lambda/lib/
-cp /usr/lib64/libtre.so.5 lambda/lib/
+cp /usr/lib64/libtre.so.5 $HOME/lambda/lib/
 
 # copy R executable to root of package
 cp $HOME/lambda/bin/exec/R $HOME/lambda/

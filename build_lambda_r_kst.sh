@@ -79,7 +79,6 @@ pip install rpy2
 # create a directory called lambda for our package
 mkdir $HOME/lambda && cd $HOME/lambda
 # copy R 
-rm /usr/lib64/R/lib/libRrefblas.so
 cp -r /usr/lib64/R/* $HOME/lambda/
 
 # Use ldd on R executable to find shared libraries, and copy all of the ones that were not already on the box
@@ -91,7 +90,6 @@ cp /usr/lib64/libquadmath.so.0 $HOME/lambda/lib/
 
 # we also need to grab this one (as we learned from trial and error)
 cp /usr/lib64/liblapack.so.3 $HOME/lambda/lib/
-cp /usr/lib64/libtre.so.5 lambda/lib/
 
 # copy R executable to root of package
 cp $HOME/lambda/bin/exec/R $HOME/lambda/
@@ -108,4 +106,4 @@ zip -r9 $HOME/${PACKAGE_NAME} handler.py
 zip -r9 $HOME/${PACKAGE_NAME} test_handler.py
 
 # copy to S3
-aws s3 cp $HOME/${PACKAGE_NAME} ${S3_PATH}/${PACKAGE_NAME}
+aws s3 cp $HOME/${PACKAGE_NAME}.zip ${S3_PATH}/${PACKAGE_NAME}

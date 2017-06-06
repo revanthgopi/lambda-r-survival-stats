@@ -108,6 +108,3 @@ zip -r9 $HOME/${PACKAGE_NAME} *
 cd $INITIAL_DIR
 zip -r9 $HOME/${PACKAGE_NAME} handler.py
 zip -r9 $HOME/${PACKAGE_NAME} test_handler.py
-
-# copy to S3
-aws s3 cp $HOME/${PACKAGE_NAME}.zip ${S3_PATH}/${PACKAGE_NAME}

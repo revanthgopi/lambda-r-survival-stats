@@ -99,7 +99,7 @@ cp $HOME/lambda/bin/exec/R $HOME/lambda/
 
 #Add the libraries from the activated Python virtual environment
 cp -r $VIRTUAL_ENV/lib64/python2.7/site-packages/* $HOME/lambda
-# we could copy all of $VIRTUAL_ENV/lib/python2.7/site-packages/, but let's grab the esseentials only
+cp -r $VIRTUAL_ENV/lib64/python2.7/dist-packages/* $HOME/lambda
 cp -r $VIRTUAL_ENV/lib/python2.7/site-packages/* $HOME/lambda
 cp -r $VIRTUAL_ENV/lib/python2.7/dist-packages/* $HOME/lambda
 

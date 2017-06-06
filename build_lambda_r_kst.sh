@@ -74,6 +74,7 @@ fi
 
 # setup virtualenv and install rpy2
 virtualenv ~/env && source ~/env/bin/activate
+pip install -U pip
 pip install rpy2
 
 # create a directory called lambda for our package
@@ -99,7 +100,8 @@ cp $HOME/lambda/bin/exec/R $HOME/lambda/
 #Add the libraries from the activated Python virtual environment
 cp -r $VIRTUAL_ENV/lib64/python2.7/site-packages/* $HOME/lambda
 # we could copy all of $VIRTUAL_ENV/lib/python2.7/site-packages/, but let's grab the esseentials only
-cp -r $VIRTUAL_ENV/lib/python2.7/site-packages/singledispatch* $HOME/lambda
+cp -r $VIRTUAL_ENV/lib/python2.7/site-packages/* $HOME/lambda
+cp -r $VIRTUAL_ENV/lib/python2.7/dist-packages/* $HOME/lambda
 
 cd $HOME/lambda
 zip -r9 $HOME/${PACKAGE_NAME} *
